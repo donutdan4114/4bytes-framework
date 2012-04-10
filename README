@@ -1,0 +1,93 @@
+  _  _   _           _            
+ | || | | |         | |           
+ | || |_| |__  _   _| |_  ___ ___ 
+ |__   _| '_ \| | | | __|/ _ | __|
+    | | | |_) | |_| | |_|  __|__ \
+    |_| |_.__/ \__, |\__|\___|___/
+                __/ |             
+               |___/        
+			   
+============================================================================
+
+Product:    4bytes v0.1
+Created by: donutdan4114
+Contact:    donutdan4114@gmail.com
+
+Contents:
+================================
+I.      Introduction
+II.     Installation
+III.    Getting Started
+IV.     How-To
+V.      Database
+VI.     Modules
+VII.    Credits
+================================
+
+
+
+
+I. ==== INTRODUCTION =======================================================
+
+Thank you for downloading the 4bytes for PHP developers!
+If you were looking for a light-wieght, highly customizable framework, then
+I think you found it! The goal of this project to make developer's lives a little
+easier. If you have been overwhelmed by the learning curves of other frameworks,
+this one should be easy!
+
+If you have any comments/questions, feel free to check out the forum at:
+danieljpepin.com/framework
+
+Also, you can send me an email:
+me@danieljpepin.com
+
+
+
+
+
+II. ==== INSTALLATION ======================================================
+
+The installation process for the 4bytes is super easy! Just extract the 
+files from the 4bytes.zip archive, and place into your web directory.
+That's pretty much it...
+
+The next thing you'll want to do, is set up your database connection!
+Go into the "system/conf.php" file, and you'll see where you can enter your database
+information. You'll notice some files already exist in the system, that is to 
+help you get started. You may choose to delete some of the 'controller' or 'view' 
+files when you feel comfortable using the framework.
+
+
+
+
+
+III. ==== GETTING STARTED ==================================================
+
+The first thing you should do once you install the framework, is learn how it 
+all works! Here is the basic idea:
+
+1) visitors go to your website.
+2) the framework displays pages as 'controllers'.
+3) 'controllers' display information using 'view' files.
+4) when you need to interact with a database, you use 'model' files.
+
+You'll notice in your 'controller' directory, two files already exist.
+The error.php file and index.php files are necessary for the system.
+The error.php file is displayed when the user goes to a page that doesn't exist.
+The index.php file is default file that the system displays to users.
+
+Open the index.php file, and look at the code.
+Each 'controller' file is a PHP class by the same name.
+So if you wanted a page called 'blog', you would create 'blog.php' with a PHP
+class 'Blog'. When the user visits your /blog URL, the controller file is loaded.
+
+You will notice a few snippets of code in the index.php controller file.
+It is well commented, and fairly self-explanatory. 
+
+You'll see a line of code where you can 'load' a view file.
+We have a view file 'index_main.php' in the /view/ directory. This view can be
+loaded with the code '$this->view("index_main")->load();'.
+
+You could load the same view multiple times, and you can load the same view
+in multiple controllers. You'll notice the header.php view, which you can load
+in each controller to have a consistent header across your website.
