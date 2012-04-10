@@ -31,40 +31,30 @@
 <p>Perhaps you didn't know that a PHP framework can be pretty, well here's proof:</p>
 
 
-<pre>
-<code>
-<font color='blue'>//create a menu item for this mymodule.inc:</font>
+<pre><code><font color='blue'>//create a menu item for /blog in <u>mymodule.inc</u>:</font>
 function mymodule_menu(){
+  <font color='blue'>//we want http://mysite.com/blog</font>
+  <font color='blue'>//return array($url_param, $controller_class);</font>
   return array('blog'=>'Blog');
-}
-</code>
-</pre>
+}</code></pre>
 
-<pre>
-<code>
-<font color='blue'>//in the mymodule.blog.controller.inc file:</font>
+<pre><code><font color='blue'>//in the <u>mymodule.blog.controller.inc</u> file:</font>
 class Blog{
 
   function __construct(){
 
     print new Template(
       'mymodule.blog', <font color='blue'>//name of the template</font>
-      $args = array(), <font color='blue'>//array of args to pass</font>
-      $cache_time = 300, <font color='blue'>//cache time in seconds</font>
+      <font color='aqua'>$args</font> = array(<font color='aqua'>$str</font> = "Hello, World!"), <font color='blue'>//array of args to pass</font>
+      <font color='aqua'>$cache_time</font> = 300, <font color='blue'>//cache time in seconds</font>
     );
 
   }
 	
-}
-</code>
-</pre>
+}</code></pre>
 
-<pre>
-<code>
-<font color='blue'>//in your mymodule.blog.template.php file:</font>
-&lt;p&gt;hello, world!&lt;p&gt;
-</code>
-</pre>
+<pre><code><font color='blue'>//in your <u>mymodule.blog.template.php</u> file:</font>
+<font color='red'>&lt;?php</font> echo <font color='aqua'>$str</font>; <font color='red'>?$gt;</font></code></pre>
 
 
 <p>4bytes makes it easy to create menu items, cache template files, and turns AJAX into your b**ch</p>
