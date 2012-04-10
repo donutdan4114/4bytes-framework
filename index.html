@@ -45,7 +45,7 @@ class Blog{
 
     print new Template(
       'mymodule.blog', <font color='blue'>//name of the template</font>
-      <font color='aqua'>$args</font> = array(<font color='aqua'>$str</font> = "Hello, World!"), <font color='blue'>//array of args to pass</font>
+      <font color='aqua'>$args</font> = array('str'=>"Hello, World!"), <font color='blue'>//array of args to pass</font>
       <font color='aqua'>$cache_time</font> = 300, <font color='blue'>//cache time in seconds</font>
     );
 
@@ -54,7 +54,7 @@ class Blog{
 }</code></pre>
 
 <pre><code><font color='blue'>//in your <u>mymodule.blog.template.php</u> file:</font>
-<font color='red'>&lt;?php</font> echo <font color='aqua'>$str</font>; <font color='red'>?$gt;</font></code></pre>
+<font color='red'>&lt;?php</font> echo <font color='aqua'>$str</font>; <font color='red'>?&gt;</font></code></pre>
 
 
 <p>4bytes makes it easy to create menu items, cache template files, and turns AJAX into your b**ch</p>
