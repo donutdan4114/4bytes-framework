@@ -33,28 +33,39 @@
 
 <pre>
 <code>
-	//create a menu item for this controller
-	function mymodule_menu(){
-		return array('blog'=>'Blog');
-	}
-	//in the controller file:
-	class Blog{
-	
-		function __construct(){
-		
-			print new Template(
-							'mymodule_blog',
-						    $args = array(),
-							 $cache_time = 300
-				       );
-		
-		}
-		
-	}
-	//in your mymodule_blog.template.php file:
-	hello, world!
+<font color='blue'>//create a menu item for this mymodule.inc:</font>
+function mymodule_menu(){
+  return array('blog'=>'Blog');
+}
 </code>
 </pre>
+
+<pre>
+<code>
+<font color='blue'>//in the mymodule.blog.controller.inc file:</font>
+class Blog{
+
+  function __construct(){
+
+    print new Template(
+      'mymodule.blog', <font color='blue'>//name of the template</font>
+      $args = array(), <font color='blue'>//array of args to pass</font>
+      $cache_time = 300, <font color='blue'>//cache time in seconds</font>
+    );
+
+  }
+	
+}
+</code>
+</pre>
+
+<pre>
+<code>
+<font color='blue'>//in your mymodule.blog.template.php file:</font>
+&lt;p&gt;hello, world!&lt;p&gt;
+</code>
+</pre>
+
 
 <p>4bytes makes it easy to create menu items, cache template files, and turns AJAX into your b**ch</p>
 
