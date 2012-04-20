@@ -22,13 +22,15 @@
         <p>4Bytes is a super easy, light-weight PHP framework. It is modular, extensible, and fast.</p>
         <p class="view"><a href="https://github.com/donutdan4114/4Bytes-framework">View the Project on GitHub</a></p>
         <ul>
-          <li><a href="https://github.com/donutdan4114/4Bytes-framework/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/donutdan4114/4Bytes-framework/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/donutdan4114/4Bytes-framework/zipball/master">Download <strong>.zip</strong></a></li>
+          <li><a href="https://github.com/donutdan4114/4Bytes-framework/tarball/master">Download <strong>.tar.gz</strong></a></li>
           <li><a href="https://github.com/donutdan4114/4Bytes-framework">Fork On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
-        <h3>About 4Bytes</h3>
+
+        <h3>About 4Bytes Framework</h3>
+        <hr />
 
         <p>
           4Bytes is designed to change the way you make PHP applications. 
@@ -40,9 +42,6 @@
           than trying to learn a complex framework <b>on top of</b> learning PHP. 
           With the 4Bytes Framework, you get a really powerful system, whilst being easy to read/code.
         </p>
-        <p>
-          Check out the code snippets below to get a taste of 4Bytes:
-        </p>
 
         <p>
           4Bytes is a module driven framework. You can make modules, or download pre-made ones. 
@@ -50,13 +49,18 @@
         module handles the default page requests.
         </p>
 
+        <p>
+          Check out the code snippets below to get a taste of 4Bytes:
+        </p>
+
         <p class="description">
-          Here is your basic 'Hello, World!' program.
+          Here is your basic 'Hello, World!' program created by the <u>index</u> module.<br />
+        User modules are located in: <span style="font-family: monospace">usr/modules/custom/</span>
         </p>
         <ol class="code">
-          <li><code>class Index extends Module{</code></li>
-          <li><code>  function __construct(){</code></li>
-          <li><code>    echo "Hello, World!";</code></li>
+          <li><code><span class="function">class Index extends Module</span>{</code></li>
+          <li><code>  <span class="function">function __construct()</span>{</code></li>
+          <li><code>    <span class="keyword">echo</span> <span class="string">Hello, World!"</span>;</code></li>
           <li><code>  }</code></li>
           <li><code>}</code></li>
         </ol>
@@ -71,6 +75,8 @@
         </ul>
 
         <h3>Modules</h3>
+        <hr />
+
         <p>
           Modules are what make 4Bytes so extensible. A module is simply a PHP class
           that is registered as a <i>module</i> within the system. By registering your
@@ -83,10 +89,10 @@
 
         <p class="description">An example <u>menu_item</u>.</p>
         <ol class="code">
-          <li><code>$menu_item[] = array(</code></li>
-          <li><code>  'path' => 'blog',</code></li>
-          <li><code>  'module' => 'index',</code></li>
-          <li><code>  'function' => 'blog',</code></li>
+          <li><code><span class="variable">$menu_item[]</span> = <span class="keyword">array</span>(</code></li>
+          <li><code>  <span class="string">'path'</span> => <span class="string">'blog'</span>,</code></li>
+          <li><code>  <span class="string">'module'</span> => <span class="string">'index'</span>,</code></li>
+          <li><code>  <span class="string">'function'</span> => <span class="string">'blog'</span>,</code></li>
           <li><code>)</code></li>
         </ol>
 
@@ -99,9 +105,9 @@
           Example of blog callback:
         </p>
         <ol class="code">
-          <li><code>class Index extends Module{</code></li>
-          <li><code>  public function blog(){</code></li>
-          <li><code>    echo 'Welcome to the Blog page';</code></li>
+          <li><code><span class="function">class Index extends Module</span>{</code></li>
+          <li><code>  <span class="function">public function blog()</span>{</code></li>
+          <li><code>    <span class="keyword">echo</span> <span class="string">'Welcome to the Blog page'</span>;</code></li>
           <li><code>  }</code></li>
           <li><code>)</code></li>
         </ol>
@@ -113,25 +119,38 @@
 
         <p class="description">Example of JSON callback:</p>
         <ol class="code">
-          <li><code>//in settings.php</code></li>
-          <li><code>$menu_item[] = array(</code></li>
-          <li><code>  'path' => 'update/myapi.json',</code></li>
-          <li><code>  'module' => 'index',</code></li>
-          <li><code>  'function' => 'update_myapi',</code></li>
+          <li><code><span class="comment">//in settings.php</span></code></li>
+          <li><code><span class="variable">$menu_item[]</span> = <span class="keyword">array</span>(</code></li>
+          <li><code>  <span class="string">'path'</span> => <span class="string">'update/myapi.json'</span>,</code></li>
+          <li><code>  <span class="string">'module'</span> => <span class="string">'index'</span>,</code></li>
+          <li><code>  <span class="string">'function'</span> => <span class="string">'update_myapi'</span>,</code></li>
           <li><code>)</code></li>
-          <li><code>//in index.module.php</code></li>
-          <li><code>class Index extends Module{</code></li>
-          <li><code>  public function update_myapi(){</code></li>
-          <li><code>    global $sys; //main system object in 4Bytes</code></li>
-          <li><code>    $sys->modules->page->send_headers(array('Content-type'=>'application/json'));</code></li>
-          <li><code>    echo json_encode(array('status'=>'okay','message'=>'it works!'));</code></li>
+          <li><code>)</code></li>
+          <li><code><span class="comment">//in index.module.php</span></code></li>
+          <li><code><span class="function">class Index extends Module</span>{</code></li>
+          <li><code>  <span class="function">public function update_myapi()</span>{</code></li>
+          <li><code>    <span class="keyword">global</span> <span class="variable">$sys</span>; <span class="comment">//main system object in 4Bytes</span></code></li>
+          <li><code>    <span class="variable">$sys</span>->modules->page->set_headers(<span class="keyword">array</span>(</code></li>
+          <li><code>      <span class="string">'Content-type'</span>=><span class="string">'application/json'</span>,</code></li>
+          <li><code>    ))->send_headers();</code></li>
+          <li><code>    <span class="variable">$json</span> = <span class="keyword">array</span>(<span class="string">'status'=>'okay','message'=>'it works!'</span>);</code></li>
+          <li><code>    <span class="keyword">echo</span> json_encode(<span class="variable">$json</span>);</code></li>
           <li><code>  }</code></li>
           <li><code>)</code></li>
         </ol>
 
+        <h3>Views</h3>
+        <hr />
+        <p>Coming soon...</p>
+        
+        <h3>Layouts</h3>
+        <hr />
+        <p>Coming soon...</p>
+        
+        
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/donutdan4114">donutdan4114</a></p>
+        <p>This project is maintained by <a href="http://danieljpepin.com">Daniel J Pepin</a></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>

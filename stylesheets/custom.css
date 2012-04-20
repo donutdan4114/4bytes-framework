@@ -22,7 +22,9 @@ header ul{
 header ul li a{
   background-color: #7b0310;
 }
-header ul li a{
+header ul li a,
+header ul li a:visited{
+  line-height: 1.1em;
   font-size: 1.0em;
   color: white;
   transition: background-color .2s;
@@ -52,12 +54,11 @@ header ul li a strong{
   padding-top:10px;
   padding-right: 0px;
   padding-bottom: 10px;
-  padding-left: 0px;
+  padding-left: 8px;
   border-radius: 0px 0px 10px 10px;
   border-bottom: 1px #7b0310 solid;
   border-right: 1px #7b0310 solid;
-  border-left: 26px #7b0310 solid;
-  overflow-x: auto;
+  border-left: 35px #7b0310 solid;
 }
 
 
@@ -65,6 +66,7 @@ header ul li a strong{
   color: white;
   padding-left: 10px;
   margin-left:0px;
+  font-family: monospace;
 }
 
 .code li:nth-child(odd){
@@ -74,4 +76,25 @@ header ul li a strong{
 code{
   color: #666;
   white-space: pre;
+}
+
+/***************   CODE CLASSES   ***********************/
+.variable{
+  color: #008080;
+}
+
+.keyword{
+  color: #cc0000;
+}
+
+.string{
+  color: #669900;
+}
+
+.function{
+  color:#888888;
+}
+
+.comment{
+  color:#99ccff;
 }
