@@ -57,6 +57,7 @@ header ul li a strong{
   border-bottom: 1px #7b0310 solid;
   border-right: 1px #7b0310 solid;
   border-left: 26px #7b0310 solid;
+  overflow-x: auto;
 }
 
 

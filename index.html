@@ -92,12 +92,42 @@
 
         <p>
           This <u>menu_item</u> allows the URL http://mydomain.com/blog to run the 
-          Index::blog(); function. <i>How cool is that?</i>
+        Index::blog(); function. <i>How cool is that?</i>
         </p>
-        
+
         <p class="description">
-          Example of blog callback.
+          Example of blog callback:
         </p>
+        <ol class="code">
+          <li><code>class Index extends Module{</code></li>
+          <li><code>  public function blog(){</code></li>
+          <li><code>    echo 'Welcome to the Blog page';</code></li>
+          <li><code>  }</code></li>
+          <li><code>)</code></li>
+        </ol>
+
+        <p>
+          The <u>menu_item</u> system makes it really easy to do AJAX callbacks.
+        You can easily return JSON results to build out awesome APIs.
+        </p>
+
+        <p class="description">Example of JSON callback:</p>
+        <ol class="code">
+          <li><code>//in settings.php</code></li>
+          <li><code>$menu_item[] = array(</code></li>
+          <li><code>  'path' => 'update/myapi.json',</code></li>
+          <li><code>  'module' => 'index',</code></li>
+          <li><code>  'function' => 'update_myapi',</code></li>
+          <li><code>)</code></li>
+          <li><code>//in index.module.php</code></li>
+          <li><code>class Index extends Module{</code></li>
+          <li><code>  public function update_myapi(){</code></li>
+          <li><code>    global $sys; //main system object in 4Bytes</code></li>
+          <li><code>    $sys->modules->page->send_headers(array('Content-type'=>'application/json'));</code></li>
+          <li><code>    echo json_encode(array('status'=>'okay','message'=>'it works!'));</code></li>
+          <li><code>  }</code></li>
+          <li><code>)</code></li>
+        </ol>
 
       </section>
       <footer>
