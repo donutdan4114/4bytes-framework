@@ -44,43 +44,60 @@
           Check out the code snippets below to get a taste of 4Bytes:
         </p>
 
-        <p class="description">
-          4Bytes is a module driven framework. You can make modules, or download pre-made ones.
+        <p>
+          4Bytes is a module driven framework. You can make modules, or download pre-made ones. 
+          The default module in every installation is the <u>index</u> module. The <u>index</u>
+        module handles the default page requests.
         </p>
 
-        <ol class="code">
-          <li><code>test</code></li>
-          <li><code>  test</code></li>
-          <li><code>  test</code></li>
-          <li><code>test</code></li>
-        </ol>
-
-
-        <p class="description"></p>
-        <ol class="code">
-          <li><code>test</code></li>
-          <li><code>  test</code></li>
-          <li><code>  test</code></li>
-          <li><code>test</code></li>
-        </ol>
-
         <p class="description">
-          4Bytes is a module driven framework. You can make modules, or download pre-made ones.
+          Here is your basic 'Hello, World!' program.
         </p>
         <ol class="code">
-          <li><code>test</code></li>
-          <li><code>  test</code></li>
-          <li><code>  test</code></li>
-          <li><code>test</code></li>
+          <li><code>class Index extends Module{</code></li>
+          <li><code>  function __construct(){</code></li>
+          <li><code>    echo "Hello, World!";</code></li>
+          <li><code>  }</code></li>
+          <li><code>}</code></li>
         </ol>
 
+        <p>
+          4Bytes Framework has 3 main features to learn:
+        </p>
+        <ul>
+          <li>Modules - Where you write your code</li>
+          <li>Views - Where you write your HTML</li>
+          <li>Layouts - Where you combine your views</li>
+        </ul>
 
-        <p>4Bytes makes it easy to create menu items, cache template files, and turns AJAX into your b**ch</p>
+        <h3>Modules</h3>
+        <p>
+          Modules are what make 4Bytes so extensible. A module is simply a PHP class
+          that is registered as a <i>module</i> within the system. By registering your
+          module with 4Bytes, it is able to instantiate it, and call methods within it.
+        </p>
+        <p>
+          Modules are used to create <u>menu_items</u>. A <u>menu_item</u> is a piece
+        of code that tells the system what URLs are mapped to which function.
+        </p>
 
-        <h3>Coming soon...</h3>
+        <p class="description">An example <u>menu_item</u>.</p>
+        <ol class="code">
+          <li><code>$menu_item[] = array(</code></li>
+          <li><code>  'path' => 'blog',</code></li>
+          <li><code>  'module' => 'index',</code></li>
+          <li><code>  'function' => 'blog',</code></li>
+          <li><code>)</code></li>
+        </ol>
 
-        <p>There is some <i>serious</i> work left to be done. Hopefully this project will be at v1.0 by the end of 2012.</p>
-
+        <p>
+          This <u>menu_item</u> allows the URL http://mydomain.com/blog to run the 
+          Index::blog(); function. <i>How cool is that?</i>
+        </p>
+        
+        <p class="description">
+          Example of blog callback.
+        </p>
 
       </section>
       <footer>
