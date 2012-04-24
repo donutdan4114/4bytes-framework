@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>4Bytes Framework (PHP)</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <img src="images/logo_medium.png" width="260" height="260" alt="Main Logo"/>
+        <h1>4Bytes Framework</h1>
+        <hr />
+        <p>4Bytes is a super easy, light-weight PHP framework. It is modular, extensible, and fast.</p>
+        <p class="view"><a href="https://github.com/donutdan4114/4Bytes-framework">View the Project on GitHub</a></p>
+        <ul>
+          <li><a href="https://github.com/donutdan4114/4Bytes-framework/zipball/master">Download <strong>.zip</strong></a></li>
+          <li><a href="https://github.com/donutdan4114/4Bytes-framework/tarball/master">Download <strong>.tar.gz</strong></a></li>
+          <li><a href="https://github.com/donutdan4114/4Bytes-framework">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+
+      <section>
+
+        <nav class="main">
+          <ul>
+            <li><a href="/">About</a></li>
+            <li><a href="tutorial.html" class="active">Tutorial</a></li>
+          </ul>
+        </nav>
+
+        <h3>Tutorial</h3>
+        <hr />
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet quam orci, ac sodales tortor. Etiam ac tempor purus. Ut hendrerit pulvinar mi, quis pellentesque magna vulputate vitae. Morbi at magna et diam porttitor porta quis non augue. Integer nibh neque, varius ut tempor a, malesuada ac justo. 
+        </p>
+        <p>
+          Suspendisse bibendum porta dui, sit amet elementum massa sodales consectetur. Duis ac nisi lorem. Maecenas gravida nisi ut mauris ornare in auctor dui ullamcorper. Quisque vitae metus tortor. Curabitur ut gravida sapien. Pellentesque feugiat condimentum ipsum a varius.
+        </p>
+
+        <p class="description">Example of JSON callback:</p>
+        <ol class="code">
+          <li><code><span class="comment">//in settings.php</span></code></li>
+          <li><code><span class="variable">$menu_item[]</span> = <span class="keyword">array</span>(</code></li>
+          <li><code>  <span class="string">'path'</span> => <span class="string">'update/myapi.json'</span>,</code></li>
+          <li><code>  <span class="string">'module'</span> => <span class="string">'index'</span>,</code></li>
+          <li><code>  <span class="string">'function'</span> => <span class="string">'update_myapi'</span>,</code></li>
+          <li><code>)</code></li>
+          <li><code><span class="comment">//in index.module.php</span></code></li>
+          <li><code><span class="function">class Index extends Module</span>{</code></li>
+          <li><code>  <span class="function">public function update_myapi()</span>{</code></li>
+          <li><code>    <span class="keyword">global</span> <span class="variable">$sys</span>; <span class="comment">//main system object in 4Bytes</span></code></li>
+          <li><code>    <span class="variable">$sys</span>->modules->page->set_headers(<span class="keyword">array</span>(</code></li>
+          <li><code>      <span class="string">'Content-type'</span>=><span class="string">'application/json'</span>,</code></li>
+          <li><code>    ))->send_headers();</code></li>
+          <li><code>    <span class="variable">$json</span> = <span class="keyword">array</span>(<span class="string">'status'=>'okay','message'=>'it works!'</span>);</code></li>
+          <li><code>    <span class="keyword">echo</span> json_encode(<span class="variable">$json</span>);</code></li>
+          <li><code>  }</code></li>
+          <li><code>)</code></li>
+        </ol>
+
+
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="http://danieljpepin.com">Daniel J Pepin</a></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+
+  </body>
+</html>
