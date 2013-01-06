@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Constants for pages should be defined in the controller.
+ */
 define('DJP_URL', 'http://danieljpepin.com');
 define('GITHUB', 'http://donutdan4114.github.com/4bytes-framework/');
 
@@ -8,16 +11,18 @@ define('GITHUB', 'http://donutdan4114.github.com/4bytes-framework/');
  */
 class IndexController {
 
-  private $vars = array();
-
   public function __construct() {
-    $this->vars = array(
-      'size' => round(disk_total_space('../') / (1024 * 1024 * 1024), 1)
-    );
+    // Put code in here you want to run every time this controller is hit.
   }
 
+  /**
+   * This function gets hit at /index/view
+   * @return string
+   */
   public function view() {
-    return layout('index', $this->vars);
+    $size = round(disk_total_space('../') / (1024 * 1024 * 1024), 1);
+    $vars['content'] = view('index', array('size' => $size));
+    return layout('index', $vars);
   }
 
 }

@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file system.inc
+ *
+ * This file has all of the functions that 4bytes requires.
+ *
+ */
 
 /**
  * Returns the path of the controller file.
@@ -22,15 +28,23 @@ function include_controller($path) {
     $class = ucfirst($controller) . 'Controller';
     $controller = new $class(arg(2));
     $method = empty($method) ? "view" : $method;
-    return call_user_func_array(array($controller, $method), $args);
+    if (is_callable(array($controller, $method))) {
+      return call_user_func_array(array($controller, $method), $args);
+    }
+  }
+  // If all else fails...
+  return error_controller();
+}
 
-  }
-  else {
-    include '../controllers/error.php';
-    $class = 'ErrorController';
-    $controller = new $class();
-    return $controller->view();
-  }
+/**
+ * Gets the error controller HTML.
+ * @return string Error page HTML.
+ */
+function error_controller() {
+  include '../controllers/error.php';
+  $class = 'ErrorController';
+  $controller = new $class();
+  return $controller->view();
 }
 
 /**
@@ -98,12 +112,44 @@ function addRoute($paths, $info) {
   }
 }
 
+/**
+ * Add a setting to the global namespace.
+ *
+ * @param $var
+ * @param $val
+ */
+function addSetting($var, $val) {
+  global $settings;
+  $settings[$var] = $val;
+}
+
+/**
+ * Get a setting from the global namespace.
+ * Essentially this is just an alias for $settings.
+ *
+ * @param $var
+ *
+ * @return mixed
+ */
+function setting($var) {
+  global $settings;
+  return $settings[$var];
+}
+
 function getRoute($path) {
   global $routes;
   if (isset($routes[$path])) {
     return $routes[$path];
   }
   else {
+
+    // Check to see if there is a regex match.
+    foreach ($routes as $key => $r) {
+      if (preg_match($key, $path)) {
+        return $routes[$key];
+      }
+    }
+
     return NULL;
   }
 }
@@ -127,8 +173,9 @@ function arg($num) {
 function args() {
   $args = explode('/', $_GET['q']);
   $count = count($args);
+  $start = 2;
   $return = array();
-  for ($i = 2; $i < $count; $i++) {
+  for ($i = $start; $i < $count; $i++) {
     $return[] = $args[$i];
   }
   return $return;

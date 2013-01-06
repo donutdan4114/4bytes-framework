@@ -1,11 +1,11 @@
 <html>
   <head>
-    <?php print HTML::title('4bytes Framework'); ?>
+    <?php print HTML::title(setting('SYSTEM.SITE')); ?>
     <?php print HTML::css('4bytes'); ?>
   </head>
   <body>
     <div id="main-wrapper">
-      <?php print view('index', array('size' => $size)); ?>
+      <?php print $content; ?>
     </div>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<?php print HTML::h1('4bytes Framework'); ?>
+<?php print HTML::h1(setting('SYSTEM.SITE')); ?>
 <hr/>
 <p>
   Take a look at the code to learn the 4bytes Framework.<br/>
