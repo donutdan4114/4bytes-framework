@@ -19,14 +19,27 @@
     <div class="wrapper">
       <header>
         <img src="images/logo_medium.png" width="260" height="260" alt="Main Logo"/>
+
         <h1>4Bytes Framework</h1>
-        <hr />
-        <p>4Bytes is a super easy, light-weight PHP framework. It is modular, extensible, and fast.</p>
-        <p class="view"><a href="https://github.com/donutdan4114/4Bytes-framework">View the Project on GitHub</a></p>
+        <hr/>
+        <p>
+          4Bytes is a super easy, light-weight PHP framework.
+          It isn't really object-oriented, it doesn't have to be.<br/><br/>
+          If you have a small project that requires PHP, 4bytes could be the ketchup to your hotdog.
+        </p>
+
+        <p class="view">
+          <a href="https://github.com/donutdan4114/4Bytes-framework">View the Project on GitHub</a>
+        </p>
         <ul>
-          <li><a href="https://github.com/donutdan4114/4Bytes-framework/zipball/master">Download <strong>.zip</strong></a></li>
-          <li><a href="https://github.com/donutdan4114/4Bytes-framework/tarball/master">Download <strong>.tar.gz</strong></a></li>
-          <li><a href="https://github.com/donutdan4114/4Bytes-framework">Fork On <strong>GitHub</strong></a></li>
+          <li>
+            <a href="https://github.com/donutdan4114/4Bytes-framework/zipball/master">Download
+              <strong>.zip</strong></a></li>
+          <li>
+            <a href="https://github.com/donutdan4114/4Bytes-framework/tarball/master">Download
+              <strong>.tar.gz</strong></a></li>
+          <li><a href="https://github.com/donutdan4114/4Bytes-framework">Fork On
+            <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
@@ -34,28 +47,23 @@
         <nav class="main">
           <ul>
             <li><a href="index.html" class="active">About</a></li>
-            <li><a href="tutorial.html">Tutorial</a></li>
           </ul>
         </nav>
 
         <h3>About 4Bytes Framework</h3>
-        <hr />
+        <hr/>
 
         <p>
-          4Bytes is designed to change the way you make PHP applications. 
-          This easy-to-use framework is designed around being the fastest, easiest, and <i>sexiest</i> framework.
-          Yes, I said <i>sexy</i> when describing a PHP framework.
+          4Bytes is designed to be easy, and fast to develop with.<br/>
+          It comes with a JSON file database for easy getting/storing.<br/>
+          <br/>
         </p>
+
         <p>
-          The main goal of 4Bytes is ease-of-use. Nothing is more frustrating, especially to a new PHP developer, 
-          than trying to learn a complex framework <b>on top of</b> learning PHP. 
+          The main goal of 4Bytes is ease-of-use. Nothing is more frustrating, especially to a new PHP developer,
+          than trying to learn a complex framework
+          <b>on top of</b> learning PHP.
           With the 4Bytes Framework, you get a really powerful system, whilst being easy to read/code.
-        </p>
-
-        <p>
-          4Bytes is a module driven framework. You can make modules, or download pre-made ones. 
-          The default module in every installation is the <u>index</u> module. The <u>index</u>
-        module handles the default page requests.
         </p>
 
         <p>
@@ -63,102 +71,47 @@
         </p>
 
         <p class="description">
-          Here is your basic 'Hello, World!' program created by the <u>index</u> module.<br />
-        User modules are located in: <span style="font-family: monospace">usr/modules/custom/</span>
+          Here is your basic 'Hello, World!' program.<br/>
+          Edit your /views/index.php file.
         </p>
         <ol class="code">
-          <li><code><span class="function">class Index extends Module</span>{</code></li>
-          <li><code>  <span class="function">function __construct()</span>{</code></li>
-          <li><code>    <span class="keyword">echo</span> <span class="string">Hello, World!"</span>;</code></li>
-          <li><code>  }</code></li>
-          <li><code>}</code></li>
+          <li>
+            <code><span class="function">Hello, World!</span></code>
+          </li>
         </ol>
 
         <p>
-          4Bytes Framework has 3 main features to learn:
-        </p>
-        <ul>
-          <li>Modules - Where you write your code</li>
-          <li>Views - Where you write your HTML</li>
-          <li>Layouts - Where you combine your views</li>
-        </ul>
-
-        <h3>Modules</h3>
-        <hr />
-
-        <p>
-          Modules are what make 4Bytes so extensible. A module is simply a PHP class
-          that is registered as a <i>module</i> within the system. By registering your
-          module with 4Bytes, it is able to instantiate it, and call methods within it.
-        </p>
-        <p>
-          Modules are used to create <u>menu_items</u>. A <u>menu_item</u> is a piece
-        of code that tells the system what URLs are mapped to which function.
+          Holy sugar pickles, that was easy! No routing, no weird namespaces or
+          request controllers. 4bytes is about being easy to learn, and master.
         </p>
 
-        <p class="description">An example <u>menu_item</u>.</p>
-        <ol class="code">
-          <li><code><span class="variable">$menu_item[]</span> = <span class="keyword">array</span>(</code></li>
-          <li><code>  <span class="string">'path'</span> => <span class="string">'blog'</span>,</code></li>
-          <li><code>  <span class="string">'module'</span> => <span class="string">'index'</span>,</code></li>
-          <li><code>  <span class="string">'function'</span> => <span class="string">'blog'</span>,</code></li>
-          <li><code>)</code></li>
-        </ol>
-
-        <p>
-          This <u>menu_item</u> allows the URL http://mydomain.com/blog to run the 
-        Index::blog(); function. <i>How cool is that?</i>
-        </p>
 
         <p class="description">
-          Example of blog callback:
+          Let's checkout the built-in JSON database api.<br/>
+          Open the index controller in controllers/index.php.
         </p>
         <ol class="code">
-          <li><code><span class="function">class Index extends Module</span>{</code></li>
-          <li><code>  <span class="function">public function blog()</span>{</code></li>
-          <li><code>    <span class="keyword">echo</span> <span class="string">'Welcome to the Blog page'</span>;</code></li>
-          <li><code>  }</code></li>
-          <li><code>)</code></li>
+          <li>
+            <code><span class="variable">$db</span>->set(<span class="string">'settings'</span>,<span class="string">'SITE.NAME'</span>, <span class="string">'4bytes'</span>);</code></li>
+          <li>
+            <code><span class="variable">$this</span>->vars[<span class="string">'site_name'</span>] = <span class="variable">$db</span>->get(<span class="string">'settings'</span>, <span class="string">'SITE.NAME'</span>);</code>
+          </li>
         </ol>
 
-        <p>
-          The <u>menu_item</u> system makes it really easy to do AJAX callbacks.
-        You can easily return JSON results to build out awesome APIs.
+        <p class="description">
+          Now go into your view:
         </p>
-
-        <p class="description">Example of JSON callback:</p>
         <ol class="code">
-          <li><code><span class="comment">//in settings.php</span></code></li>
-          <li><code><span class="variable">$menu_item[]</span> = <span class="keyword">array</span>(</code></li>
-          <li><code>  <span class="string">'path'</span> => <span class="string">'update/myapi.json'</span>,</code></li>
-          <li><code>  <span class="string">'module'</span> => <span class="string">'index'</span>,</code></li>
-          <li><code>  <span class="string">'function'</span> => <span class="string">'update_myapi'</span>,</code></li>
-          <li><code>)</code></li>
-          <li><code><span class="comment">//in index.module.php</span></code></li>
-          <li><code><span class="function">class Index extends Module</span>{</code></li>
-          <li><code>  <span class="function">public function update_myapi()</span>{</code></li>
-          <li><code>    <span class="keyword">global</span> <span class="variable">$sys</span>; <span class="comment">//main system object in 4Bytes</span></code></li>
-          <li><code>    <span class="variable">$sys</span>->modules->page->set_headers(<span class="keyword">array</span>(</code></li>
-          <li><code>      <span class="string">'Content-type'</span>=><span class="string">'application/json'</span>,</code></li>
-          <li><code>    ))->send_headers();</code></li>
-          <li><code>    <span class="variable">$json</span> = <span class="keyword">array</span>(<span class="string">'status'=>'okay','message'=>'it works!'</span>);</code></li>
-          <li><code>    <span class="keyword">echo</span> json_encode(<span class="variable">$json</span>);</code></li>
-          <li><code>  }</code></li>
-          <li><code>)</code></li>
+          <li><code><span class="php-tag">&lt;?php</span> <span class="function">print</span> <span class="variable">$site_name;</span> <span class="php-tag">?&gt;</span></code></li>
+          <li><code><span class="comment">// output: 4bytes</span></code></li>
         </ol>
-
-        <h3>Views</h3>
-        <hr />
-        <p>Coming soon...</p>
-
-        <h3>Layouts</h3>
-        <hr />
-        <p>Coming soon...</p>
+        You can check the stored values in the database folder.
 
 
       </section>
       <footer>
-        <p>This project is maintained by <a href="http://danieljpepin.com">Daniel J Pepin</a></p>
+        <p>This project is maintained by
+          <a href="http://danieljpepin.com">Daniel J Pepin</a></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>

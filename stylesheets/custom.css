@@ -2,28 +2,30 @@
 * 4Bytes Dark Red: #7b0310;
 */
 
-header h1{
+header h1 {
   text-align: center;
 }
 
-a, a:visited{
-  color:#7b0310;
+a, a:visited {
+  color: #7b0310;
 }
 
-a:hover{
+a:hover {
   text-decoration: underline;
 }
 
-header ul{
+header ul {
   background: none;
   border: none;
   border-radius: 0px;
 }
-header ul li a{
+
+header ul li a {
   background-color: #7b0310;
 }
+
 header ul li a,
-header ul li a:visited{
+header ul li a:visited {
   line-height: 1.1em;
   font-size: 1.0em;
   color: white;
@@ -32,15 +34,17 @@ header ul li a:visited{
   -webkit-transition: background-color .2s; /* Safari and Chrome */
   -o-transition: background-color .2s; /* Opera */
 }
-header ul li a:hover{
+
+header ul li a:hover {
   background-color: black;
   text-decoration: none;
 }
-header ul li a strong{
+
+header ul li a strong {
   color: white;
 }
 
-.description{
+.description {
   color: white;
   font-family: arial, sans-serif;
   background-color: #7b0310;
@@ -49,9 +53,9 @@ header ul li a strong{
   margin: 0;
 }
 
-.code{
+.code {
   background-color: #FAFAFA;
-  padding-top:10px;
+  padding-top: 10px;
   padding-right: 0px;
   padding-bottom: 10px;
   padding-left: 8px;
@@ -61,73 +65,78 @@ header ul li a strong{
   border-left: 35px #7b0310 solid;
 }
 
-
-.code li{
+.code li {
   color: white;
   padding-left: 10px;
-  margin-left:0px;
+  margin-left: 0px;
   font-family: monospace;
 }
 
-.code li:nth-child(odd){
+.code li:nth-child(odd) {
   background-color: #EEEEEE;
 }
 
-code{
+code {
   color: #666;
   white-space: pre;
 }
 
 /***************   CODE CLASSES   ***********************/
-.variable{
+.php-tag {
+  color: red;
+}
+
+.variable {
   color: #008080;
 }
 
-.keyword{
+.keyword {
   color: #cc0000;
 }
 
-.string{
+.string {
   color: #669900;
 }
 
-.function{
-  color:#888888;
+.function {
+  color: #888888;
 }
 
-.comment{
-  color:#99ccff;
+.comment {
+  color: #99ccff;
 }
 
-nav.main{
-  display:block;
+nav.main {
+  display: block;
   width: 100%;
   height: 50px;
 }
-nav.main ul{
-  margin:0 !important;
+
+nav.main ul {
+  margin: 0 !important;
   padding: 0;
   list-style: none;
   width: 100%;
   height: 100%;
 }
 
-nav.main ul li{
-  display:block;
-  float:left;
+nav.main ul li {
+  display: block;
+  float: left;
   margin-right: 3px;
 }
 
-nav.main ul li a{
+nav.main ul li a {
   padding: 8px 20px 9px 20px;
-  color:white;
-  background-color:#7b0310;
+  color: white;
+  background-color: #7b0310;
   transition: background-color .2s;
   -moz-transition: background-color .2s; /* Firefox 4 */
   -webkit-transition: background-color .2s; /* Safari and Chrome */
   -o-transition: background-color .2s; /* Opera */
 }
-nav.main ul li a:hover,nav.main ul li a.active{
+
+nav.main ul li a:hover, nav.main ul li a.active {
   background-color: black;
   text-decoration: none;
 }
