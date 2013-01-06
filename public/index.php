@@ -26,5 +26,8 @@ include controller(path());
 /*
  * Print the layout of the path.
  * A URL argument that is a number is not interpreted.
+ * So /user/43/edit would actually load the /user/edit.php layout.
+ * This makes it easy to have URL arguments.
+ * In your controller you can grab the argument with arg(1).
  */
 print layout(path());
