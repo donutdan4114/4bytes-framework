@@ -9,7 +9,7 @@ function controller($path) {
     return $path;
   }
   else {
-    return '../controllers/default.php';
+    return '../controllers/error.php';
   }
 }
 
