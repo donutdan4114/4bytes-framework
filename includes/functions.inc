@@ -3,13 +3,33 @@
 /**
  * Returns the path of the controller file.
  */
-function controller($path) {
-  $path = '../controllers/' . $path . '.php';
-  if (file_exists($path)) {
-    return $path;
+function include_controller($path) {
+  // Need to check routes with this path.
+  $route = getRoute($path);
+  if ($route) {
+    $controller = $route['controller'];
+    $method = $route['method'];
+    $args = $route['args'];
   }
   else {
-    return '../controllers/error.php';
+    $controller = arg(0);
+    $method = arg(1);
+    $args = args();
+  }
+  $path = '../controllers/' . $controller . '.php';
+  if (file_exists($path)) {
+    include $path;
+    $class = ucfirst($controller) . 'Controller';
+    $controller = new $class(arg(2));
+    $method = empty($method) ? "view" : $method;
+    return call_user_func_array(array($controller, $method), $args);
+
+  }
+  else {
+    include '../controllers/error.php';
+    $class = 'ErrorController';
+    $controller = new $class();
+    return $controller->view();
   }
 }
 
@@ -45,8 +65,6 @@ function html($type, $file, $args) {
   }
   ob_start();
   extract($args);
-  // Let views and layouts get controller vars.
-  extract($controller->vars);
   require $path;
   $html = ob_get_contents();
   ob_end_clean();
@@ -65,7 +83,29 @@ function path() {
       $url = str_replace('/' . $arg, NULL, $url);
     }
   }
-  return empty($url) ? 'index' : $url;
+  return $url;
+}
+
+/**
+ * Adds a route to the system.
+ *
+ * @param $path
+ */
+function addRoute($paths, $info) {
+  global $routes;
+  foreach ($paths as $path) {
+    $routes[$path] = $info;
+  }
+}
+
+function getRoute($path) {
+  global $routes;
+  if (isset($routes[$path])) {
+    return $routes[$path];
+  }
+  else {
+    return NULL;
+  }
 }
 
 /**
@@ -73,5 +113,23 @@ function path() {
  */
 function arg($num) {
   $args = explode('/', $_GET['q']);
-  return $args[$num];
+  if (isset($args[$num])) {
+    return $args[$num];
+  }
+  else {
+    return NULL;
+  }
+}
+
+/**
+ * Returns args. Does not include controller and method information.
+ */
+function args() {
+  $args = explode('/', $_GET['q']);
+  $count = count($args);
+  $return = array();
+  for ($i = 2; $i < $count; $i++) {
+    $return[] = $args[$i];
+  }
+  return $return;
 }

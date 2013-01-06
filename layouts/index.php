@@ -5,7 +5,7 @@
   </head>
   <body>
     <div id="main-wrapper">
-      <?php print view('index'); ?>
+      <?php print view('index', array('size' => $size)); ?>
     </div>
   </body>
 </html>

@@ -3,6 +3,7 @@
     <title>Error</title>
   </head>
   <body>
-    Layout <span style="font-weight:bold"><?php print path() ?>.php</span> does not exist.
+    <h1>Page Not Found</h1>
+    Controller <span style="font-weight:bold"><?php print arg(0) ?>.php</span> does not exist.
   </body>
 </html>

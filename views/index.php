@@ -4,7 +4,7 @@
   Take a look at the code to learn the 4bytes Framework.<br/>
   Seriously, it's self explanatory.
   <br/><br/>
-  This framework is only <?php print $directory_size; ?>KB
+  This framework is only <?php print $size; ?>KB
   <br/>
   <br/>
   <span class="shameless">
