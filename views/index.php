@@ -1,14 +1,50 @@
-<?php print HTML::h1(setting('SYSTEM.SITE')); ?>
-<hr/>
-<p>
-  Take a look at the code to learn the 4bytes Framework.<br/>
-  Seriously, it's self explanatory.
-  <br/><br/>
-  This framework is only <?php print $size; ?>KB
-  <br/>
-  <br/>
-  <span class="shameless">
-    <a href="<?php print DJP_URL ?>" target="_blank">ME</a> |
-    <a href="<?php print GITHUB ?>" target="_blank">GITHUB</a>
-  </span>
-</p>
+<div class="container">
+
+  <!-- Main hero unit for a primary marketing message or call to action -->
+  <div class="hero-unit">
+    <?php print HTML::img('http://donutdan4114.github.com/4bytes-framework/images/logo_medium.png', array(
+      'id' => 'logo',
+      'class' => 'pull-right'
+    )); ?>
+    <h1>Hello, world!</h1>
+
+    <p>The 4bytes Framework comes pre-included with Twitter bootstrap.<br/>Check out the
+      <a href="http://twitter.github.com/bootstrap/getting-started.html#examples" target="_blank">bootstrap documentation</a>.
+    </p>
+
+    <p>
+      Current size on disk: <?php print $size ?>KB
+    </p>
+  </div>
+
+
+  <hr>
+
+  <div id="footer">
+    <div class="container">
+      <p class="muted credit">Created by
+        <a href="http://danieljpepin.com" target="_blank">DJP</a> |
+        View on
+        <a href="http://donutdan4114.github.com/4bytes-framework/" target="_blank">GitHub</a> |
+        Learn more about
+        <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/"><?php print setting('SYSTEM.SITE'); ?></a>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+<!-- /container -->

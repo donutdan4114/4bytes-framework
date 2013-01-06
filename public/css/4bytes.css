@@ -1,61 +1,18 @@
-/**
- * 4bytes red: #7b030f
- */
-
-body {
-  background-image: url('http://donutdan4114.github.com/4bytes-framework/images/logo_medium.png');
-  background-repeat: no-repeat;
-  background-position: 0px 20px;
-}
-
-h1 {
-  font-family: Calibri, Helvetica, Arial, sans-serif;
-  font-size: 3.0em;
-  line-height: 1.0em;
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-p {
-  font-family: Helvetica, arial, sans-serif;
-  line-height: 1.6em;
-}
-
-hr {
-  border: 0;
-  border-bottom: 1px solid #aaa;
-}
-
-#main-wrapper {
-  padding: 50px 50px 30px 50px;
+.navbar-inverse .navbar-inner {
+  background: none;
   background-color: #7b030f;
-  border-radius: 20px;
-  width: 400px;
-  margin: auto;
-  margin-top: 50px;
-  border: 10px solid white;
-  box-shadow: 5px 5px 40px #555;
+  border-bottom: 1px solid black;
 }
 
-#main-wrapper h1 {
+.navbar-inverse .brand {
   color: white;
 }
 
-#main-wrapper p {
+.navbar-inverse .brand:hover{
   color: #ccc;
 }
 
-.shameless {
-  color: #aaa;
-  font-size: .8em;
-}
-
-.shameless a {
-  color: #888;
-  text-decoration: none;
-}
-
-.shameless a:hover {
-  text-decoration: underline;
-  color: #ccc;
+#logo{
+  margin-top: -17px;
+  margin-right: -60px;
 }
