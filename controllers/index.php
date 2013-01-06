@@ -26,6 +26,7 @@ class IndexController {
      *     'lname' = 'Saget',
      *   ));
      */
+    $this->vars['directory_size'] = round(disk_total_space('../') / (1024 * 1024 * 1024), 1);
   }
 
 }

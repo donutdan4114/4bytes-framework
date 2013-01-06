@@ -1,7 +1,10 @@
 <?php print HTML::h1('4bytes Framework'); ?>
 <hr/>
 <p>
-  Take a look at the code to learn the 4bytes Framework.<br/>Seriously, it's self explanatory.
+  Take a look at the code to learn the 4bytes Framework.<br/>
+  Seriously, it's self explanatory.
+  <br/><br/>
+  This framework is only <?php print $directory_size; ?>KB
   <br/>
   <br/>
   <span class="shameless">
