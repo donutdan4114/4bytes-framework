@@ -1,0 +1,51 @@
+h1 {
+  font-family: Calibri, Helvetica, Arial, sans-serif;
+  font-size: 3.0em;
+  line-height: 1.0em;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: Helvetica, arial, sans-serif;
+  line-height: 1.6em;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #aaa;
+}
+
+#main-wrapper {
+  padding: 50px;
+  background-color: #7b030f;
+  border-radius: 20px;
+  width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  border: 10px solid white;
+  box-shadow: 5px 5px 40px #555;
+}
+
+#main-wrapper h1 {
+  color: white;
+}
+
+#main-wrapper p {
+  color: #ccc;
+}
+
+.shameless {
+  color: #aaa;
+  font-size: .8em;
+}
+
+.shameless a {
+  color: #888;
+  text-decoration: none;
+}
+
+.shameless a:hover {
+  text-decoration: underline;
+  color: #ccc;
+}
