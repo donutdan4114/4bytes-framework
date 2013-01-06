@@ -1,33 +1,6 @@
 <?php
 
 /**
- * Loads a javascript file.
- *
- * @param $type Type is either 'internal' or 'external'.
- *
- * @return HTML for javascript path
- */
-function js($file, $type = 'internal') {
-  if ($type == 'internal') {
-    return '<script type="text/javascript" src="js/' . $file . '.js"></script>';
-  }
-  else {
-    return '<script type="text/javascript" src="' . $file . '"></script>';
-  }
-}
-
-/**
- * Loads a css file.
- *
- * @param $file
- *
- * @return string
- */
-function css($file) {
-  return '<link rel="stylesheet" type="text/css" href="css/' . $file . '.css">';
-}
-
-/**
  * Returns the path of the controller file.
  */
 function controller($path) {

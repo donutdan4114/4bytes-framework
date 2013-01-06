@@ -14,6 +14,10 @@
  * If you need to include anything misc, do it here.
  */
 require '../includes/functions.inc';
+
+// HTML helper file.
+require '../includes/html.inc';
+
 // require '../includes/json.php'; // Loads the JSON file database system.
 
 // Include the controller for this path.

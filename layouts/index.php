@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>4bytes Framework</title>
-    <?php print css('4bytes'); ?>
+    <?php print HTML::css('4bytes'); ?>
   </head>
   <body>
     <div id="main-wrapper">

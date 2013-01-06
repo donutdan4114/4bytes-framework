@@ -1,3 +1,9 @@
+body {
+  background-image: url('../img/4bytes_logo.png');
+  background-repeat: no-repeat;
+  background-position: 0px 20px;
+}
+
 h1 {
   font-family: Calibri, Helvetica, Arial, sans-serif;
   font-size: 3.0em;
@@ -17,7 +23,7 @@ hr {
 }
 
 #main-wrapper {
-  padding: 50px;
+  padding: 50px 50px 30px 50px;
   background-color: #7b030f;
   border-radius: 20px;
   width: 400px;
