@@ -1,3 +1,8 @@
+.hero-unit {
+  margin-top: 70px;
+  padding: 30px 60px 60px 60px;
+}
+
 .navbar-inverse .navbar-inner {
   background: none;
   background-color: #7b030f;

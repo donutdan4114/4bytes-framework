@@ -11,16 +11,13 @@
   <div class="hero-unit">
     <?php print HTML::img('http://donutdan4114.github.com/4bytes-framework/images/logo_medium.png', array(
       'id' => 'logo',
-      'class' => 'pull-right'
+      'class' => 'pull-right',
+      'width' => 220,
     )); ?>
     <h1>Hello, world!</h1>
 
     <p>The 4bytes Framework comes pre-included with Twitter bootstrap.<br/>Check out the
       <a href="http://twitter.github.com/bootstrap/getting-started.html#examples" target="_blank">bootstrap documentation</a>.
-    </p>
-
-    <p>
-      Current size on disk: <?php print $size ?>KB
     </p>
   </div>
 

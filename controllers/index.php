@@ -21,8 +21,7 @@ class IndexController {
    */
   public function view() {
     // Get the size of the framework on the disk.
-    $size = round(disk_total_space('../') / (1024 * 1024 * 1024), 1);
-    $vars['content'] = view('index', array('size' => $size));
+    $vars['content'] = view('index');
     return layout('index', $vars);
   }
 
