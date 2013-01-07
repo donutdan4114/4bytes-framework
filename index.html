@@ -55,58 +55,63 @@
 
         <p>
           4Bytes is designed to be easy, and fast to develop with.<br/>
-          It comes with a JSON file database for easy getting/storing.<br/>
-          <br/>
+          It comes with Twitter Bootstrap so you can start developing as soon as you download 4bytes.<br/>
         </p>
 
         <p>
-          The main goal of 4Bytes is ease-of-use. Nothing is more frustrating, especially to a new PHP developer,
+          The main goal of 4Bytes is speed. Nothing is more frustrating, especially to a new PHP developer,
           than trying to learn a complex framework
           <b>on top of</b> learning PHP.
-          With the 4Bytes Framework, you get a really powerful system, whilst being easy to read/code.
+          With the 4Bytes Framework, you get a really powerful system, all while having it be really easy to learn.<br/>
+          The learning curve is about 20 minutes.
+        </p>
+
+        <hr/>
+
+        <p>
+          To learn 4bytes, just check out the /public/index.php file. You will be able to follow the code from there.
+          4bytes is similar to other MVC frameworks, although it is less strict.
         </p>
 
         <p>
-          Check out the code snippets below to get a taste of 4Bytes:
+          Benefits of using 4bytes Framework:
         </p>
-
-        <p class="description">
-          Here is your basic 'Hello, World!' program.<br/>
-          Edit your /views/index.php file.
-        </p>
-        <ol class="code">
+        <ul>
           <li>
-            <code><span class="function">Hello, World!</span></code>
+            You'll be a better programmer. 4bytes doesn't give you too much. It gives you just enough to let you quickly
+            build applications, but you still have to know a lot of PHP.
           </li>
-        </ol>
-
-        <p>
-          Holy sugar pickles, that was easy! No routing, no weird namespaces or
-          request controllers. 4bytes is about being easy to learn, and master.
-        </p>
-
-
-        <p class="description">
-          Let's checkout the built-in JSON database api.<br/>
-          Open the index controller in controllers/index.php.
-        </p>
-        <ol class="code">
           <li>
-            <code><span class="variable">$db</span>->set(<span class="string">'settings'</span>,<span class="string">'SITE.NAME'</span>, <span class="string">'4bytes'</span>);</code></li>
-          <li>
-            <code><span class="variable">$this</span>->vars[<span class="string">'site_name'</span>] = <span class="variable">$db</span>->get(<span class="string">'settings'</span>, <span class="string">'SITE.NAME'</span>);</code>
+            It's fast. Really fast. In fact, if you don't enable the DB connection, it might be one of the fastest frameworks,
+            and it uses almost no memory. 4bytes doesn't come with bloated classes and complicated structures, it's all pretty simple.
           </li>
-        </ol>
-
-        <p class="description">
-          Now go into your view:
-        </p>
-        <ol class="code">
-          <li><code><span class="php-tag">&lt;?php</span> <span class="function">print</span> <span class="variable">$site_name;</span> <span class="php-tag">?&gt;</span></code></li>
-          <li><code><span class="comment">// output: 4bytes</span></code></li>
-        </ol>
-        You can check the stored values in the database folder.
-
+          <li>
+            Fast. Did I mention the fast development? If you need to whip up a site in a jiffy, 4bytes comes loaded with
+            Twitter Bootstrap and jQuery.
+          </li>
+          <li>
+            Zero config. You literally don't have to change anything in order to use the framework. Granted, you should change some of the settings
+            to match your project settings, but you don't have to.
+          </li>
+        </ul>
+        <p>4bytes tutorial in 5 minutes:</p>
+        <ul>
+          <li>
+            Routes define what should happen at a given URL. Create a route that points to the controller and method you want to use.
+          </li>
+          <li>
+            Controllers are the pieces that actually return HTML. You can actually return anything, JSON or XML would be valid.
+          </li>
+          <li>
+            URL arguments are anything in the URL that is not the controller or method. Example: the URL /blog/view would call the "blog" controller and the "view" method.
+          </li>
+          <li>
+            Layouts are HTML files that should contain the &lt;html&gt; tags and header information. Views are smaller pieces of HTLM that should be reusable.
+          </li>
+          <li>
+            Includes are miscellaneous files that you can include in your project. If you need to include some classes or functions put the file in the includes folder and include the file in the includes.php file.
+          </li>
+        </ul>
 
       </section>
       <footer>
