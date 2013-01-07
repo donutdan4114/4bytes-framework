@@ -27,6 +27,11 @@ addSetting('SYSTEM.ENCRYPT_KEY', 'put_random_string_here');
 addSetting('SYSTEM.SITE', '4bytes Framework');
 
 /**
+ * You can encrypt cookies so they cannot be edited.
+ */
+addSetting('COOKIE.ENCRYPT', TRUE);
+
+/**
  * Your MySQL settings.
  */
 addSetting('MYSQL.SETTINGS', array(

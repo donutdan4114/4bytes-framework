@@ -15,13 +15,29 @@ function include_controller($path) {
   if ($route) {
     $controller = $route['controller'];
     $method = $route['method'];
-    $args = $route['args'];
   }
   else {
     $controller = arg(0);
     $method = arg(1);
-    $args = args();
   }
+  $args = args($controller, $method);
+  if ($html = controller($controller, $method, $args)) {
+    return $html;
+  }
+  // If all else fails...
+  return controller("error", "view", $args);
+}
+
+/**
+ * Returns a controller's HTML.
+ *
+ * @param $controller
+ * @param $method
+ * @param $args
+ *
+ * @return bool|mixed
+ */
+function controller($controller, $method, $args) {
   $path = '../controllers/' . $controller . '.php';
   if (file_exists($path)) {
     include $path;
@@ -32,19 +48,55 @@ function include_controller($path) {
       return call_user_func_array(array($controller, $method), $args);
     }
   }
-  // If all else fails...
-  return error_controller();
+  return FALSE;
+}
+
+function GET($key) {
+  return $_GET[$key];
+}
+
+function POST($key) {
+  return $_POST[$key];
+}
+
+function REQUEST($key) {
+  return $_REQUEST[$key];
 }
 
 /**
- * Gets the error controller HTML.
- * @return string Error page HTML.
+ * Encrypt a string.
+ *
+ * @param $str
+ * @param null $seed
+ *
+ * @return string
  */
-function error_controller() {
-  include '../controllers/error.php';
-  $class = 'ErrorController';
-  $controller = new $class();
-  return $controller->view();
+function encrypt($str, $seed = NULL) {
+  if (empty($seed)) {
+    $seed = setting('SYSTEM.ENCRYPT_KEY');
+  }
+  $block = mcrypt_get_block_size('des', 'ecb');
+  $pad = $block - (strlen($str) % $block);
+  $str .= str_repeat(chr($pad), $pad);
+  return base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $seed, trim($str), MCRYPT_MODE_ECB));
+}
+
+/**
+ * Decrypt a string.
+ *
+ * @param $str
+ * @param null $seed
+ *
+ * @return string
+ */
+function decrypt($str, $seed = NULL) {
+  if (empty($seed)) {
+    $seed = setting('SYSTEM.ENCRYPT_KEY');
+  }
+  $str = mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $seed, base64_decode($str), MCRYPT_MODE_ECB);
+  $block = mcrypt_get_block_size('des', 'ecb');
+  $pad = ord($str[($len = strlen($str)) - 1]);
+  return trim(substr($str, 0, strlen($str) - $pad));
 }
 
 /**
@@ -86,24 +138,31 @@ function html($type, $file, $args) {
 }
 
 /**
+ * Gets the request_uri from the server.
+ * @return string
+ */
+function request_uri() {
+  $path = substr($_SERVER['REQUEST_URI'], 1);
+  if (!$path) {
+    $path = '';
+  }
+  return $path;
+}
+
+/**
  * Gets URL path.
+ * Basically just an alias for request_uri().
  */
 function path() {
-  // Filter out numbers.
-  $url = $_GET['q'];
-  $args = explode('/', $_GET['q']);
-  foreach ($args as $arg) {
-    if (is_numeric($arg)) {
-      $url = str_replace('/' . $arg, NULL, $url);
-    }
-  }
-  return $url;
+  return request_uri();
 }
 
 /**
  * Adds a route to the system.
- *
- * @param $path
+ * @param $name Name of the URL. This is the name you can use to easily create
+ *   links.
+ * @param $paths Array of paths that match the route.
+ * @param $info Array of information. Controller and method should be passed.
  */
 function addRoute($paths, $info) {
   global $routes;
@@ -145,7 +204,7 @@ function getRoute($path) {
 
     // Check to see if there is a regex match.
     foreach ($routes as $key => $r) {
-      if (preg_match($key, $path)) {
+      if (!empty($key) && preg_match($key, $path)) {
         return $routes[$key];
       }
     }
@@ -158,7 +217,7 @@ function getRoute($path) {
  * Gets the URL arg.
  */
 function arg($num) {
-  $args = explode('/', $_GET['q']);
+  $args = explode('/', request_uri());
   if (isset($args[$num])) {
     return $args[$num];
   }
@@ -168,15 +227,15 @@ function arg($num) {
 }
 
 /**
- * Returns args. Does not include controller and method information.
+ * Returns args by filtering out the controller/method information.
  */
-function args() {
-  $args = explode('/', $_GET['q']);
+function args($controller, $method) {
+  $args = explode('/', request_uri());
   $count = count($args);
-  $start = 2;
-  $return = array();
-  for ($i = $start; $i < $count; $i++) {
-    $return[] = $args[$i];
+  for ($i = 0; $i < $count; $i++) {
+    if ($args[$i] == $controller || $args[$i] == $method) {
+      unset($args[$i]);
+    }
   }
-  return $return;
+  return $args;
 }

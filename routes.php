@@ -14,12 +14,14 @@
  */
 
 /**
- * This route will match all paths.
+ * This route will match the homepage.
+ * You can create a link to the homepage by simply doing:
+ *   print HTML::link('Go to homepage', 'homepage');
  */
-addRoute(array('(.*)'), array(
+addRoute(array(''), array(
+  'name' => 'homepage',
   'controller' => 'index',
   'method' => 'view',
-  'args' => args(),
 ));
 
 

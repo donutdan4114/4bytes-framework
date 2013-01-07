@@ -94,7 +94,7 @@ DirectoryIndex /index.php?q=
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !=/favicon.ico
 
-  RewriteRule ^(.*)$ /index.php?q=$1 [L]
+  RewriteRule ^ /index.php/$1 [L]
 
 
 

@@ -3,9 +3,10 @@
  * 4bytes Framework
  *
  * This is the main file that loads the site.
- * Notice how small it is. Wow, so small.
+ * Any files that you need to load should be included here.
  *
  * @author Daniel Pepin <me@danieljpepin.com>
+ *
  */
 
 /**

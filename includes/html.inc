@@ -50,8 +50,16 @@ class HTML {
     return '<img src="' . $src . '" ' . self::getOptionsHtml($options) . ' />';
   }
 
-  public static function link($html, $options = array()) {
-    return self::tag('a', $html, $options);
+  public static function link($title, $url, $options = array()) {
+    global $routes;
+    // Check routes for this $url.
+    foreach ($routes as $path => $r) {
+      if ($r['name'] == $url) {
+        $url = $path;
+      }
+    }
+    $options['href'] = $url;
+    return self::tag('a', $title, $options);
   }
 
   public static function code($html, $options = array()) {
