@@ -23,7 +23,8 @@ require '../routes.php';
 // Need to load settings.
 require '../settings.php';
 
-// require '../includes/json.php'; // Loads the JSON file database system.
+// require '../includes/json.inc'; // Loads the JSON file database system.
+// require '../includes/mysql.inc'; // Connects to MySQL database.
 
 
 // Include the controller for this path.

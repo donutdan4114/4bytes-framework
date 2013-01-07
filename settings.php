@@ -4,6 +4,11 @@
  * You can create custom settings.
  */
 
+/**
+ * This effects what types of errors your application shows.
+ */
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 
 /**
  * This salt is used for hashing data.
@@ -20,5 +25,16 @@ addSetting('SYSTEM.ENCRYPT_KEY', 'put_random_string_here');
  * Custom variable for site name.
  */
 addSetting('SYSTEM.SITE', '4bytes Framework');
+
+/**
+ * Your MySQL settings.
+ */
+addSetting('MYSQL.SETTINGS', array(
+  'host' => 'localhost',
+  'database' => '',
+  'port' => 3306,
+  'user' => 'root',
+  'pass' => '',
+));
 
 

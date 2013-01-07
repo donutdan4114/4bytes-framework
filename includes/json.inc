@@ -1,7 +1,7 @@
 <?php
 
 // Initialize the JSON_DB class.
-$db = new JSON_DB();
+$json = new JSON_DB();
 
 /**
  * JSON Simple File Database.

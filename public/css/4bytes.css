@@ -8,11 +8,15 @@
   color: white;
 }
 
-.navbar-inverse .brand:hover{
+.navbar-inverse .brand:hover {
   color: #ccc;
 }
 
-#logo{
+#logo {
   margin-top: -17px;
   margin-right: -60px;
+}
+
+.hero-unit h1 {
+  margin-bottom: 10px;
 }
