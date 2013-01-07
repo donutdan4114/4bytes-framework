@@ -63,6 +63,7 @@ function REQUEST($key) {
   return $_REQUEST[$key];
 }
 
+
 /**
  * Encrypt a string.
  *
@@ -159,6 +160,7 @@ function path() {
 
 /**
  * Adds a route to the system.
+ *
  * @param $name Name of the URL. This is the name you can use to easily create
  *   links.
  * @param $paths Array of paths that match the route.
