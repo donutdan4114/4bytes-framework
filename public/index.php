@@ -24,9 +24,8 @@ require '../routes.php';
 // Need to load settings.
 require '../settings.php';
 
-// require '../includes/json.inc'; // Loads the JSON file database system.
-// require '../includes/mysql.inc'; // Connects to MySQL database.
-
+// Need to load user defined files.
+require '../includes.php';
 
 // Include the controller for this path.
 print include_controller(path());
