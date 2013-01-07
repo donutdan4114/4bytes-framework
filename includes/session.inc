@@ -6,11 +6,10 @@
 class Session {
 
   /**
-   * Set a cookie.
+   * Set a session variable.
    *
    * @param $name
    * @param $val
-   * @param $expire
    */
   function set($name, $val) {
     if (!isset($_SESSION)) {
@@ -20,7 +19,7 @@ class Session {
   }
 
   /**
-   * Get a cookie.
+   * Get a session variable.
    *
    * @param $var
    *
