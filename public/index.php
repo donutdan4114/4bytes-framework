@@ -3,7 +3,8 @@
  * 4bytes Framework
  *
  * This is the main file that loads the site.
- * Any files that you need to load should be included here.
+ * Any misc files that you need to load should be included
+ * in the includes.php file.
  *
  * @author Daniel Pepin <me@danieljpepin.com>
  *
@@ -13,6 +14,8 @@
  * Include misc files.
  * If you need to include anything misc, do it here.
  */
+
+// Main system file.
 require '../includes/system.inc';
 
 // HTML helper file.
