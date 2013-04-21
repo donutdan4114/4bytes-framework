@@ -1,5 +1,4 @@
 ## Controllers
-***
 **Classes that handle HTTP requests.**
 
 Controllers should contain a class with a name of:

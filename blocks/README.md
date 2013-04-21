@@ -1,5 +1,4 @@
 ## Blocks
-***
 **Small files that contain reusable HTML**
 
 Examples of blocks include navs, footers, promo tiles, and asides.

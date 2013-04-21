@@ -1,5 +1,4 @@
 ## Views
-***
 **Views are portions of HTML, typically larger than blocks, and are not usually considered reusable.**
 
 You can easily get a view's HTML with `view('about')`.

@@ -1,6 +1,5 @@
 ![4Bytes Logo](http://donutdan4114.github.com/4bytes-framework/images/logo_medium.png)
-# 4Bytes Framework
-***
+## 4Bytes Framework
 **The 4bytes Framework is one of the simplest, and fastest PHP frameworks that exist today. It is very easy to learn, and is a great framework for beginners, or someone who wants a very easy-to-maintain website.**
 
 4bytes is quick to develop with, easy to grasp, and easy to extend.

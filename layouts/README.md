@@ -1,5 +1,4 @@
 ## Layouts
-***
 **These HTML files should be the main wrapper for your views. Layouts should contain the `<head>` and `<body>` tags.**
 
 Typically, your controller will return layouts.
