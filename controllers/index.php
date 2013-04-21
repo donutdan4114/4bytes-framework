@@ -20,9 +20,9 @@ class IndexController {
    * @return string
    */
   public function view() {
-    // Get the size of the framework on the disk.
     $vars['content'] = view('index');
-    return layout('index', $vars);
+    $vars['title'] = "4bytes Framework";
+    return layout('main', $vars);
   }
 
 }

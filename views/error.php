@@ -1,4 +1,15 @@
-<?php
+<div class="hero-unit">
+  <?=
+  HTML::img(LOGO_PATH, array(
+    'id' => 'logo',
+    'class' => 'pull-right',
+    'width' => 220,
+  ));
+  ?>
+  <h1>Page Not Found</h1>
 
-// You tried to render a view that does not exist.
-trigger_error("View does not exist", E_USER_NOTICE);
+  <p>
+    We couldn't find the page you're looking for.<br/>
+    Check out <?= HTML::link('our homepage', 'homepage') ?>.
+  </p>
+</div>

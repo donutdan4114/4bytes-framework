@@ -8,9 +8,11 @@ class ErrorController {
   public $vars = array();
 
   function view() {
-    // Send 404 header.
     header("HTTP/1.0 404 Not Found");
-    return layout('error');
+    return layout('main', array(
+        'content' => view('error'),
+        'title' => "Page Not Found")
+    );
   }
 
 }

@@ -9,16 +9,34 @@
  * This route will match the homepage.
  * You can create a link to the homepage by simply doing:
  *   print HTML::link('Go to homepage', 'homepage');
+ * You can have multiple routes that point to one place.
+ * These routes will all go to the index controller:
+ *   - /index.php
+ *   - /index
+ *   - /home
+ *   - /
+ *   - /index.html
  */
-addRoute(array(''), array(
+addRoute(array('index.php', 'index.html', 'index', 'home', ''), array(
   'name' => 'homepage',
   'controller' => 'index',
   'method' => 'view',
+  'regex' => FALSE,
 ));
 
-addRoute(array('contact'), array(
-  'name' => 'contact',
+/**
+ * Use regex to match any URL pattern.
+ * This pattern will match:
+ *   - /contact
+ *   - /contact/test
+ *   - /contact/one/two/three
+ * But will not match:
+ *   - /test/contact
+ */
+addRoute(array('/^contact\/(.+)/'), array(
+  // Do not include a 'name' when using regex patterns.
   'controller' => 'contact',
   'method' => 'view',
+  'regex' => TRUE,
 ));
 

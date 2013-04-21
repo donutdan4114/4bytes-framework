@@ -1,6 +1,6 @@
 <?php
 /**
- * This code gets run when the path is /contact
+ * This code gets run when the path is /contact/*
  */
 class ContactController {
 
@@ -13,8 +13,9 @@ class ContactController {
    * @return string
    */
   public function view() {
-    // Display contact view.
-    return layout('index', array('content' => view('contact')));
+    $vars['content'] = view('contact');
+    $vars['title'] = "Contact | 4bytes Framework";
+    return layout('main', $vars);
   }
 
 }

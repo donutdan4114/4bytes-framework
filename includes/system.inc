@@ -63,7 +63,6 @@ function REQUEST($key) {
   return $_REQUEST[$key];
 }
 
-
 /**
  * Encrypt a string.
  *
@@ -108,6 +107,13 @@ function view($view, $args = array()) {
 }
 
 /**
+ * Renders a block.
+ */
+function block($block, $args = array()) {
+  return html('block', $block, $args);
+}
+
+/**
  * Renders a layout.
  */
 function layout($layout, $args = array()) {
@@ -118,8 +124,6 @@ function layout($layout, $args = array()) {
  * Utility function for printing HTML.
  */
 function html($type, $file, $args) {
-  // Load global controller file.
-  global $controller;
   $type = $type . 's';
   if (file_exists('../' . $type . '/' . $file . '.php')) {
     $path = '../' . $type . '/' . $file . '.php';
@@ -203,11 +207,12 @@ function getRoute($path) {
     return $routes[$path];
   }
   else {
-
     // Check to see if there is a regex match.
     foreach ($routes as $key => $r) {
-      if (!empty($key) && preg_match($key, $path)) {
-        return $routes[$key];
+      if ($r['regex'] === TRUE) {
+        if (preg_match($key, $path)) {
+          return $routes[$key];
+        }
       }
     }
 
