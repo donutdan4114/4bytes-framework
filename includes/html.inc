@@ -30,8 +30,13 @@ class HTML {
     }
   }
 
-  public static function css($href) {
-    return '<link href="/css/' . $href . '.css" rel="stylesheet" type="text/css" />';
+  public static function css($href, $type = 'internal') {
+    if ($type == 'internal') {
+      return '<link href="/css/' . $href . '.css" rel="stylesheet" type="text/css" />';
+    }
+    else {
+      return '<link href="' . $href . '" rel="stylesheet" type="text/css" />';
+    }
   }
 
   public static function hr() {

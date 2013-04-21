@@ -16,4 +16,9 @@ addRoute(array(''), array(
   'method' => 'view',
 ));
 
+addRoute(array('contact'), array(
+  'name' => 'contact',
+  'controller' => 'contact',
+  'method' => 'view',
+));
 

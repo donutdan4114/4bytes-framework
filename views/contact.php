@@ -14,14 +14,12 @@
       'class' => 'pull-right',
       'width' => 220,
     )); ?>
-    <h1>Hello, world!</h1>
-
-    <p>The 4bytes Framework comes with Twitter bootstrap and jQuery.<br/>Check out the
-      <a href="http://twitter.github.com/bootstrap/getting-started.html#examples" target="_blank">bootstrap documentation</a>.
-    </p>
+    <h1>Contact Us</h1>
 
     <p>
-      Also, <?php print HTML::link('check out a sub-page', 'contact') ?>, and see how easy it is to code with 4bytes.
+      Hello there!<br/>
+      This is an example of a sub-page. <br/>
+      Check out <em>controllers/contact.php</em> to see the magic.
     </p>
   </div>
 
