@@ -7,6 +7,19 @@
  */
 
 /**
+ * Trims all whitespace characters, even unicode.
+ *
+ * @param string $str
+ *   String to strip whitespace from.
+ *
+ * @return string
+ *   Returns the trimmed string.
+ */
+function utrim($str) {
+  return preg_replace('/^[\pZ\pC]+|[\pZ\pC]+$/u', '', $str);
+}
+
+/**
  * Returns the path of the controller file.
  */
 function include_controller($path) {
@@ -78,7 +91,7 @@ function encrypt($str, $seed = NULL) {
   $block = mcrypt_get_block_size('des', 'ecb');
   $pad = $block - (strlen($str) % $block);
   $str .= str_repeat(chr($pad), $pad);
-  return base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $seed, trim($str), MCRYPT_MODE_ECB));
+  return base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $seed, utrim($str), MCRYPT_MODE_ECB));
 }
 
 /**
@@ -96,7 +109,7 @@ function decrypt($str, $seed = NULL) {
   $str = mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $seed, base64_decode($str), MCRYPT_MODE_ECB);
   $block = mcrypt_get_block_size('des', 'ecb');
   $pad = ord($str[($len = strlen($str)) - 1]);
-  return trim(substr($str, 0, strlen($str) - $pad));
+  return utrim(substr($str, 0, strlen($str) - $pad));
 }
 
 /**

@@ -1,9 +1,11 @@
 <div class="hero-unit">
-  <?php print HTML::img(LOGO_PATH, array(
+  <?=
+  HTML::img(LOGO_PATH, array(
     'id' => 'logo',
     'class' => 'pull-right',
     'width' => 220,
-  )); ?>
+  ));
+  ?>
   <h1>Contact Us</h1>
 
   <p>
