@@ -9,7 +9,7 @@
   </div>
   <!-- Main hero unit for a primary marketing message or call to action -->
   <div class="hero-unit">
-    <?php print HTML::img('http://donutdan4114.github.com/4bytes-framework/images/logo_medium.png', array(
+    <?php print HTML::img(LOGO_PATH, array(
       'id' => 'logo',
       'class' => 'pull-right',
       'width' => 220,

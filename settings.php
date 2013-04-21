@@ -4,11 +4,12 @@
  * You can create custom settings.
  */
 
+define('LOGO_PATH', 'http://donutdan4114.github.com/4bytes-framework/images/logo_medium.png');
+
 /**
  * This effects what types of errors your application shows.
  */
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
-
 
 /**
  * This salt is used for hashing data.
