@@ -19,5 +19,7 @@ Amazing features of the 4bytes Framework:
  - Helpful static classes like `HTML`, `Cookie`, `Session`, and `JSON_DB`
  - Easy to contribute to, just fork and add some useful helpers
  - *Seriously, no pointless OOP, there is no need to complicate this*
+
 ***
+
 Interested? Download it and try it, **no setup required** <small>(assuming you have a LAMP stack)</small>.
